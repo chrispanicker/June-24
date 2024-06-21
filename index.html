@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden;">
+    <head>
+        <!-- Hi curious friend! This is chris :)
+        I Coded this based on work from the wonderful Daniel Schiffman! -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="./src/p5.min.js"></script>
+        <script src="./src/p5.sound.js"></script>
+        <style>
+            @font-face {
+                font-family: Tiempos;
+                src: url(./src/TiemposHeadline-Black.woff);
+            }
+            *{
+                font-family: Tiempos;
+                user-select: none;
+            }
+
+            @media (max-width: 720px) {
+                .logo{
+                    width: 14rem;
+                    height: auto;    
+                }
+                .date{
+                    font-size: 4rem;
+                }
+            }
+            @media (min-width: 720px){
+                .logo{
+                    width: 20rem;  
+                    height: auto;  
+                }
+                .date{
+                    font-size: 6rem;
+                }
+            }
+        </style>
+    </head>
+    <body style="overflow:hidden; margin:0; padding:0;">
+            <div style="
+                    position: absolute; 
+                    top:0px; 
+                    width: 100vw; 
+                    height:100vh; 
+                    display: flex; 
+                    flex-direction: column; 
+                    justify-content: space-between; 
+                    align-items: center; 
+                    pointer-events: none;
+                    background-color: (0, 0, 0); ">
+                <image class="logo" style="
+                    padding-top: 1rem;" src="src/Pitchfork Logotype_(White).png"></image>
+                <div class="date" style="
+                    padding-bottom: 1rem; 
+                    color:white;">
+                June 24</div>
+            </div>
+        <script src="sketch.js"></script>
+    </body>
+</html>
