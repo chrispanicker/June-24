@@ -7,6 +7,14 @@ function preload(){
 function setup(){
   let cnv = createCanvas(windowWidth, windowHeight);
 
+
+  cnv.mousePressed(userStartAudio);
+  mic = new p5.AudioIn();
+  mic.start();
+}
+
+function draw(){
+
   let msg = "SELECTS", txtX=0, txtY=0;
 
   if(width<750){
@@ -39,14 +47,6 @@ function setup(){
     pt.y = (pt.y - bounds.y - bounds.h/2)+height/2;
   }
 
-  cnv.mousePressed(userStartAudio);
-  textAlign(CENTER);
-  mic = new p5.AudioIn();
-  mic.start();
-}
-
-function draw(){
-  let wave=0;
   let senstivities = .04
   background(0)
   stroke(255)
@@ -84,4 +84,8 @@ function draw(){
     }
   }
   endShape()
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
