@@ -9,10 +9,14 @@ function setup(){
 
   let msg = "SELECTS", txtX=0, txtY=0;
 
-  if(width<900){
+  if(width<750){
       w=5;
-      fontSize=140;
+      fontSize=80;
       points = font.textToPoints(msg, txtX, txtY, fontSize, {sampleFactor: .1});
+  }else if(width<900){
+    w=10;
+    fontSize=150;
+    points = font.textToPoints(msg, txtX, txtY, fontSize, {sampleFactor: .16});
   }else if(width<1100){
     w=10;
     fontSize=200;
@@ -63,7 +67,7 @@ function draw(){
   beginShape()
   for(let pt of points){
     if(pt.y<height/2){
-      let y = map(micLevel, 0, .01, height/2, pt.y);
+      let y = map(micLevel, 0, .03, height/2, pt.y);
       ellipse(pt.x, random(y, pt.y), 10*micLevel*3)
       vertex(pt.x, random(y, pt.y))
     }
@@ -74,7 +78,7 @@ function draw(){
     if(pt.y<height/2){
 
     }else{
-      let y = map(micLevel, 0, .01, height/2, pt.y);
+      let y = map(micLevel, 0, .03, height/2, pt.y);
       ellipse(pt.x, random(y, pt.y), 10*micLevel*3)
       vertex(pt.x, random(y, pt.y))
     }
