@@ -47,7 +47,7 @@ function draw(){
     pt.y = (pt.y - bounds.y - bounds.h/2)+height/2;
   }
 
-  let senstivities = .04
+  let senstivities = .03
   background(0)
   stroke(255)
   strokeWeight(2)
@@ -67,7 +67,7 @@ function draw(){
   beginShape()
   for(let pt of points){
     if(pt.y<height/2){
-      let y = map(micLevel, 0, .03, height/2, pt.y);
+      let y = map(micLevel, 0, .01, height/2, pt.y);
       ellipse(pt.x, random(y, pt.y), 10*micLevel*3)
       vertex(pt.x, random(y, pt.y))
     }
@@ -78,7 +78,7 @@ function draw(){
     if(pt.y<height/2){
 
     }else{
-      let y = map(micLevel, 0, .03, height/2, pt.y);
+      let y = map(micLevel, 0, .01, height/2, pt.y);
       ellipse(pt.x, random(y, pt.y), 10*micLevel*3)
       vertex(pt.x, random(y, pt.y))
     }
